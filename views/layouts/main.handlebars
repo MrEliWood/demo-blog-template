@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   <link rel="stylesheet" href="/css/reset.css">
+   <link rel="stylesheet" href="/css/style.css">
+
+   <title>The Blog</title>
+
+</head>
+
+<body>
+
+   <header>
+
+      {{!-- site title --}}
+      <a href="/">
+         <h1>The Blog</h1>
+      </a>
+
+      {{!-- nav bar --}}
+      <nav>
+         {{#if loggedIn}}
+
+         <p id="navUsername">{{username}}</p>
+         <p class="textDivider">|</p>
+         <a href="/dashboard">Dashboard</a>
+         <a href="/logout">Logout</a>
+
+         {{else}}
+
+         <a href="/login">Login</a>
+         <p class="textDivider">|</p>
+         <a href="/signup">Signup</a>
+
+         {{/if}}
+      </nav>
+
+   </header>
+
+   <main>
+
+      {{{body}}}
+
+   </main>
+
+</body>
+
+</html>

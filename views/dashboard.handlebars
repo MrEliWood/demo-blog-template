@@ -1,0 +1,73 @@
+{{!-- headline --}}
+<h1 class="headline">Welcome, {{username}}</h1>
+
+{{!-- content --}}
+<h2 class="sectionHeading">New Blog Post</h2>
+
+<form action="" id="newBlog">
+
+   <input type="text" id="newTitle" placeholder="title">
+   <textarea id="newBody" cols="30" rows="10" placeholder="blog text"></textarea>
+
+   <button id="blogSubmit">Post</button>
+
+</form>
+
+{{!-- user blogs --}}
+<h2 class="sectionHeading">Your Blogs</h2>
+
+{{#each blogs}}
+
+<div class="blog" id={{id}}>
+
+   <div class="blogHeader">
+
+      <h3 class="blogTitle">{{title}}</h3>
+      {{!-- <p class="timestamp">{{formatTime updatedAt}}</p> --}}
+
+   </div>
+
+   <p class="blogBody">{{body}}</p>
+
+   <div class="userActions">
+
+      <button class="commentButton">Comment</button>
+      <button class="delete" value={{id}}>Delete</button>
+
+   </div>
+
+   <form action="" class="newComment">
+
+      <textarea class="commentInput" cols="30" rows="10" placeholder="comment text"></textarea>
+      <button class="commentSubmit" value={{id}}>Post</button>
+
+   </form>
+
+</div>
+
+<div class="comments">
+
+   {{#if Comments}}
+
+   <h5>Comments</h5>
+
+   {{#each Comments}}
+
+   <div class="comment" id={{id}}>
+
+      <p class="commentAuthor">{{User.username}}</p>
+      <p class="commentBody">{{body}}</p>
+
+   </div>
+
+   {{/each}}
+
+   {{/if}}
+
+</div>
+
+{{/each}}
+
+{{!-- link scripts --}}
+<script src="/js/dashboard.js"></script>
+<script src="/js/comments.js"></script>

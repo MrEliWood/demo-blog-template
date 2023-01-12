@@ -1,0 +1,366 @@
+/* global variables */
+:root {
+
+   /* colors */
+   --light: white;
+   --light90: rgba(255, 255, 255, 0.9);
+   --light75: rgba(255, 255, 255, 0.75);
+   --light50: rgba(255, 255, 255, 0.5);
+   --light25: rgba(255, 255, 255, 0.25);
+   --light10: rgba(255, 255, 255, 0.1);
+
+   --dark: black;
+   --dark90: rgba(0, 0, 0, 0.9);
+   --dark75: rgba(0, 0, 0, 0.75);
+   --dark50: rgba(0, 0, 0, 0.5);
+   --dark25: rgba(0, 0, 0, 0.25);
+   --dark10: rgba(0, 0, 0, 0.1);
+
+   --gray: gray;
+   --lightgray: rgb(215, 215, 215);
+   --darkgray: rgb(30, 30, 30);
+
+   --accent: hsl(200, 10%, 10%);
+   --accent90: hsla(200, 10%, 10%, 0.9);
+   --accent75: hsla(200, 10%, 10%, 0.75);
+   --accent50: hsla(200, 10%, 10%, 0.5);
+   --accent25: hsla(200, 10%, 10%, 0.25);
+   --accent10: hsla(200, 10%, 10%, 0.10);
+
+   --red: rgb(220, 0, 0);
+   --green: rgb(0, 180, 0);
+
+   /* box shadow */
+   --shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+
+   /* sizes */
+   --tiny: 5px;
+   --small: 15px;
+   --medium: 30px;
+   --large: 60px;
+   --huge: 120px;
+
+}
+
+/* utility classes */
+.visible {
+   display: flex !important;
+}
+
+/* animations */
+@keyframes slideDown {
+
+   from {
+      transform: translateY(-200px);
+      opacity: 0;
+   }
+
+   to {
+      transform: translateY(0px);
+      opacity: 1;
+   }
+
+}
+
+@keyframes fadeUp {
+
+   from {
+      transform: translateY(-200px);
+      opacity: 0;
+   }
+
+   to {
+      transform: translateY(0px);
+      opacity: 1;
+   }
+
+}
+
+/* header */
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: fixed;
+   box-shadow: var(--shadow);
+   background: var(--accent);
+   color: var(--light);
+   height: 150px;
+   width: 100%;
+   padding: var(--large);
+   z-index: 99;
+}
+
+nav {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+nav p,
+nav a {
+   color: var(--light);
+   text-decoration: none;
+   margin-left: var(--medium);
+}
+
+nav p:hover,
+nav a:hover {
+   opacity: 0.75;
+}
+
+#navUsername,
+.textDivider {
+   color: var(--light50);
+}
+
+/* main */
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   top: 150px;
+   max-width: 1600px;
+   padding: var(--large);
+   margin: auto;
+}
+
+.multiple-posts {
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+.blog {
+   margin-top: var(--large);
+}
+
+.blogHeader {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   background: var(--accent);
+   color: var(--light);
+   padding: var(--medium);
+}
+
+.blogTitle {
+   text-transform: capitalize;
+   margin-bottom: 15px;
+}
+
+.blogBody {
+   border: solid 1px var(--dark50);
+   padding: 30px 30px 60px 30px;
+}
+
+.commentButton {
+   text-align: center;
+   background: var(--accent25);
+   border: 1px solid var(--dark50);
+   border-top: none;
+   border-radius: 0px;
+   width: 100%;
+   padding: 5px;
+   margin-bottom: 45px;
+}
+
+.commentButton:hover {
+   cursor: pointer;
+   background: var(--accent);
+   color: var(--light);
+}
+
+.newComment {
+   display: none;
+   flex-direction: column;
+   align-items: flex-end;
+   margin: 0px 30% 0px 10%;
+}
+
+.commentInput {
+   resize: none;
+   height: 150px;
+   width: 100%;
+   padding: 15px;
+}
+
+.commentSubmit {
+   text-align: center;
+   background: var(--dark10);
+   border: 1px solid var(--dark50);
+   border-radius: 0px;
+   width: 100px;
+   margin-top: 15px;
+   padding: 5px;
+}
+
+.commentSubmit:hover {
+   cursor: pointer;
+   background: var(--accent);
+   color: var(--light);
+}
+
+.comments {
+   margin: 0px 30% 0px 10%;
+}
+
+.comments h5 {
+   margin: 0px 0px 15px 5px;
+}
+
+.comment {
+   display: flex;
+   flex-direction: column;
+   border-top: 1px solid var(--dark50);
+   padding: 10px 0px 45px 0px;
+}
+
+.commentBody {
+   padding: 5px;
+}
+
+.commentAuthor {
+   color: var(--dark25);
+   padding: 5px;
+}
+
+/* login & signup */
+.auth {
+   width: 500px;
+   margin: auto;
+}
+
+#login {
+   display: flex;
+   flex-direction: column;
+   width: 500px;
+   margin: auto;
+}
+
+#login input {
+   margin-top: 30px;
+   padding: 10px;
+   border: 1px solid var(--dark50);
+}
+
+#loginSubmit {
+   text-align: center;
+   background: var(--dark10);
+   border: 1px solid var(--dark50);
+   border-radius: 0px;
+   margin-top: 30px;
+   padding: 5px;
+}
+
+#loginSubmit:hover {
+   cursor: pointer;
+   background: var(--accent);
+   color: var(--light);
+}
+
+#signup {
+   display: flex;
+   flex-direction: column;
+   width: 500px;
+   margin: auto;
+}
+
+#signup input {
+   margin-top: 30px;
+   padding: 10px;
+   border: 1px solid var(--dark50);
+}
+
+#signupSubmit {
+   text-align: center;
+   background: var(--dark10);
+   border: 1px solid var(--dark50);
+   border-radius: 0px;
+   margin-top: 30px;
+   padding: 5px;
+}
+
+#signupSubmit:hover {
+   cursor: pointer;
+   background: var(--accent);
+   color: var(--light);
+}
+
+/* user dashboard */
+.sectionHeading {
+   margin-top: 120px;
+   padding-bottom: 5px;
+   border-bottom: 1px solid var(--dark25);
+}
+
+#newBlog {
+   display: flex;
+   flex-direction: column;
+   margin-top: 60px;
+}
+
+#newBlog input[type="text"] {
+   font-size: 1.8em;
+   font-weight: 700;
+}
+
+#newTitle {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   background: var(--accent75);
+   color: var(--light);
+   padding: 20px 25px 35px 25px;
+}
+
+#newBody {
+   resize: none;
+   height: 150px;
+   width: 100%;
+   padding: 30px;
+}
+
+#blogSubmit {
+   text-align: center;
+   background: var(--dark10);
+   border: 1px solid var(--dark50);
+   border-radius: 0px;
+   width: 100px;
+   margin-top: 15px;
+   padding: 5px;
+}
+
+#blogSubmit:hover {
+   cursor: pointer;
+   background: var(--accent);
+   color: var(--light);
+}
+
+.userActions {
+   display: flex;
+}
+
+.delete {
+   text-align: center;
+   background: var(--dark10);
+   border: 1px solid var(--dark50);
+   border-top: none;
+   border-left: none;
+   border-radius: 0px;
+   width: 100%;
+   padding: 5px;
+   margin-bottom: 45px;
+}
+
+.delete:hover {
+   cursor: pointer;
+   background: var(--red);
+   color: var(--light);
+}
