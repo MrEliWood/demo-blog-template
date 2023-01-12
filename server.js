@@ -47,11 +47,11 @@ app.set('view engine', 'handlebars');
 app.use('/', allRoutes);
 
 // sync sequelize
-sequelize.sync({ force: false }).then(function () {
-	app.listen(PORT, function () {
-		console.log('App listening on PORT ' + PORT);
-	});
-});
+// sequelize.sync({ force: false }).then(function () {
+// 	app.listen(PORT, function () {
+// 		console.log('App listening on PORT ' + PORT);
+// 	});
+// });
 
 // Logs all request paths and method
 app.use(function (req, res, next) {
